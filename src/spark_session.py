@@ -8,9 +8,8 @@ def get_spark_session() -> SparkSession:
     """
     Create and return the Spark session used by the pipeline.
 
-    PySpark is explicitly configured to use the same Python
-    interpreter that is running the pipeline. This avoids
-    Python-worker issues on Windows.
+    Configures PySpark to use the current Python interpreter
+    and runs Spark locally with all available CPU cores.
     """
 
     python_executable = sys.executable
